@@ -1,7 +1,4 @@
-const moment = require("moment-timezone");
-
 const User = require("./model");
-const { jwtExpirationInterval } = require("../../../config/vars");
 
 // @route   GET /api/auth/user
 // @desc    Get logged in user
