@@ -1,4 +1,7 @@
+const moment = require("moment-timezone");
+
 const User = require("./model");
+const { jwtExpirationInterval } = require("../../../config/vars");
 
 // @route   GET /api/auth/user
 // @desc    Get logged in user
@@ -35,7 +38,10 @@ exports.register = async (req, res) => {
     // generate token
     const token = newUser.generateToken(newUser);
     // send cookie containing jwt
-    res.cookie("access_token", token);
+    res.cookie("access_token", token, {
+      httpOnly: true,
+      expires: new Date(Date.now() + 24 * 60 * 60 * 1000)
+    });
 
     res.status(200).json({ success: true });
   } catch (err) {
@@ -53,7 +59,10 @@ exports.login = async (req, res) => {
     const user = await User.findOne({ email });
 
     const token = user.generateToken(req.user);
-    res.cookie("access_token", token);
+    res.cookie("access_token", token, {
+      httpOnly: true,
+      expires: new Date(Date.now() + 24 * 60 * 60 * 1000)
+    });
 
     res.status(200).json({ success: true });
   } catch (err) {
