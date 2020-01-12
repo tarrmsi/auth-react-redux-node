@@ -1,15 +1,14 @@
-const express = require("express");
-const morgan = require("morgan");
-const cors = require("cors");
-const helmet = require("helmet");
-const cookieParser = require("cookie-parser");
-const mongoSanitize = require("express-mongo-sanitize");
-const xss = require("xss-clean");
-const hpp = require("hpp");
-
-const { logs } = require("./vars");
-const passport = require("./passport");
-const authRoutes = require("../api/services/user/routes");
+import express from "express";
+import morgan from "morgan";
+import cors from "cors";
+import helmet from "helmet";
+import cookieParser from "cookie-parser";
+import mongoSanitize from "express-mongo-sanitize";
+import xss from "xss-clean";
+import hpp from "hpp";
+import { logs } from "./vars";
+import passport from "./passport";
+import authRoutes from "../api/services/user/routes";
 
 const app = express();
 

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
+import "./Profile.css";
 import { loadUser } from "../../actions/authActions";
 
 const Profile = ({ loadUser, auth: { profile, loading } }) => {
@@ -15,13 +16,14 @@ const Profile = ({ loadUser, auth: { profile, loading } }) => {
     </React.Fragment>
   ) : (
     <React.Fragment>
-      <h1 style={{ paddingTop: "45px", textAlign: "left", margin: "25px" }}>
-        Profile Page
-      </h1>
-      <p>Hello {profile.username}</p>
-      <p>Profile Info</p>
-      <p>Email: {profile.email}</p>
-      <p>ID: {profile._id}</p>
+      <div className='wrapper'>
+        <div className='form-wrapper'>
+          <h1 className='dashboard'>Dashboard</h1>
+          <h1>{profile.username}</h1>
+          <p>ID: {profile._id}</p>
+          <p>Email: {profile.email}</p>
+        </div>
+      </div>
     </React.Fragment>
   );
 };

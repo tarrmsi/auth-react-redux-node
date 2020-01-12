@@ -1,7 +1,8 @@
-const path = require("path");
-const dotenv = require("dotenv");
+import path from "path";
+import dotenv from "dotenv";
+import { ENV } from "./constants";
 
-const { PRODUCTION } = require("./constants");
+const { PRODUCTION } = ENV;
 
 dotenv.config({ path: path.join(__dirname, "../../.env") });
 

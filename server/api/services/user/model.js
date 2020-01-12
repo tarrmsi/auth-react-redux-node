@@ -1,9 +1,9 @@
-const mongoose = require("mongoose");
-const bcrypt = require("bcryptjs");
-const JWT = require("jsonwebtoken");
-const moment = require("moment-timezone");
+import mongoose from "mongoose";
+import bcrypt from "bcryptjs";
+import JWT from "jsonwebtoken";
+import moment from "moment-timezone";
 
-const { jwtSecret, jwtExpirationInterval } = require("../../../config/vars");
+import { jwtSecret, jwtExpirationInterval } from "../../../config/vars";
 
 const userSchema = new mongoose.Schema({
   username: {

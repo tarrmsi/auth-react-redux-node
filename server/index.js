@@ -1,6 +1,6 @@
-const app = require("./config/express");
-const mongoose = require("./config/mongoose");
-const { env, port } = require("./config/vars");
+import app from "./config/express";
+import mongoose from "./config/mongoose";
+import { env, port } from "./config/vars";
 
 mongoose.connect();
 

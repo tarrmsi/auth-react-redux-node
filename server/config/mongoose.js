@@ -1,7 +1,8 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
+import { mongo, env } from "./vars";
+import { ENV } from "./constants";
 
-const { mongo, env } = require("./vars");
-const { DEV } = require("./constants");
+const { DEV } = ENV;
 
 mongoose.connection.on("error", err => {
   console.error(`MongoDB Connection Error: ${err}`);

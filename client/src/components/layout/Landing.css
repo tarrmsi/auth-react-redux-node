@@ -54,7 +54,7 @@ p {
 }
 
 .btn-primary {
-  background: #17a2b8;
+  background: var(--primary-color);
   color: #fff;
 }
 

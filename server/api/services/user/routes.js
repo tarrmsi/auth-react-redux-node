@@ -1,8 +1,8 @@
-const express = require("express");
-const passport = require("passport");
+import express from "express";
+import passport from "passport";
 
-const { register, login, getUser, logout } = require("./controller");
-const { validateBody, schemas } = require("./validation");
+import { register, login, getUser, logout } from "./controller";
+import { validateBody, schemas } from "./validation";
 
 const passportJWT = passport.authenticate("jwt", { session: false });
 const passportLocal = passport.authenticate("local", { session: false });

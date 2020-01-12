@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
 import { login } from "../../actions/authActions";
+import "./Login.css";
 
 const Login = ({ login, isAuth }) => {
   const [formData, setFormData] = useState({

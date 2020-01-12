@@ -1,9 +1,8 @@
-const JwtStrategy = require("passport-jwt/lib/strategy");
-const LocalStrategy = require("passport-local/lib/strategy");
-const passport = require("passport");
-
-const { jwtSecret } = require("./vars");
-const User = require("../api/services/user/model");
+import JwtStrategy from "passport-jwt/lib/strategy";
+import LocalStrategy from "passport-local/lib/strategy";
+import passport from "passport";
+import { jwtSecret } from "./vars";
+import User from "../api/services/user/model";
 
 const extractCookie = req => {
   let token = null;

@@ -1,4 +1,4 @@
-const User = require("./model");
+import User from "./model";
 
 // @route   GET /api/auth/user
 // @desc    Get logged in user
