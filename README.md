@@ -1,4 +1,4 @@
-# MERN Form Validation
+# Full stack authentication with React, Redux, Node.js & MongoDB
 
 ## Features
 
@@ -9,6 +9,7 @@
 - Request validation with [joi]
 - [Redux] for state management
 - New React syntax using [Hooks]
+- Routing with [react-router-dom]
 
 ## Instalation
 
@@ -34,3 +35,4 @@ $ npm run dev
 [joi]: https://hapi.dev/family/joi/
 [redux]: https://redux.js.org/
 [hooks]: https://reactjs.org/docs/hooks-intro.html
+[react-router-dom]: https://reacttraining.com/react-router/web/guides/quick-start
