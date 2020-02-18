@@ -1,0 +1,51 @@
+.container {
+  background: var(--primary-color);
+  max-width: 1100px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.alert {
+  padding: 0.8rem;
+  margin: 9rem 20rem;
+  opacity: 0.9;
+  position: absolute;
+  background: var(--primary-color);
+  box-shadow: 0px 5px 5px #333;
+  border-radius: 3px;
+  color: #333;
+}
+
+.alert-danger {
+  background: #dc3545;
+  color: #fff;
+}
+
+.alert-primary {
+  background: #17a2b8;
+  color: #fff;
+}
+
+.alert-light {
+  background: #f4f4f4;
+  color: #333;
+}
+
+.alert-dark {
+  background: #343a40;
+  color: #fff;
+}
+
+.alert-success {
+  background: #28a745;
+  color: #fff;
+}
+
+.alert-white {
+  background: #fff;
+  color: #333;
+  border: #ccc solid 1px;
+}

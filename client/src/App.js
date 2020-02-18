@@ -10,6 +10,7 @@ import NavBar from "./components/layout/NavBar";
 import Profile from "./components/layout/Profile";
 import NotFound from "./components/layout/NotFound";
 import PrivateRoute from "./components/routing/PrivateRoute";
+import Alert from "./components/layout/Alert";
 import store from "./store";
 import { loadUser } from "./actions/authActions";
 
@@ -27,11 +28,12 @@ function App() {
       <Router>
         <React.Fragment>
           <NavBar />
+          <Alert />
           <Switch>
-            <Route exact path='/' component={Landing} />
-            <Route exact path='/register' component={Register} />
-            <Route exact path='/login' component={Login} />
-            <PrivateRoute exact path='/profile' component={Profile} />
+            <Route exact path="/" component={Landing} />
+            <Route exact path="/register" component={Register} />
+            <Route exact path="/login" component={Login} />
+            <PrivateRoute exact path="/profile" component={Profile} />
             <Route component={NotFound} />
           </Switch>
         </React.Fragment>
