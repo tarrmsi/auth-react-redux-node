@@ -16,7 +16,7 @@ const Dashboard = ({ auth: { user, loading } }) => {
         <h2>Welcome {user && user.name}</h2>
         {user !== null ? (
           <Fragment>
-            <Link className="btn" to="/profile">
+            <Link className="btn-dash" to="/profile">
               View Profile
             </Link>
           </Fragment>
