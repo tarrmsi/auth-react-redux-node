@@ -11,10 +11,13 @@ const NavBar = ({ auth: { isAuth, loading }, logout }) => {
   const authLink = (
     <ul>
       <li>
-        <Link to='/profile'>Profile</Link>
+        <Link to="/dashboard">Dashboard</Link>
       </li>
       <li>
-        <Link to='#!' onClick={logout}>
+        <Link to="/profile">Profile</Link>
+      </li>
+      <li>
+        <Link to="#!" onClick={logout}>
           Logout
         </Link>
       </li>
@@ -24,18 +27,18 @@ const NavBar = ({ auth: { isAuth, loading }, logout }) => {
   const guestLink = (
     <ul>
       <li>
-        <Link to='/register'>Register</Link>
+        <Link to="/register">Register</Link>
       </li>
       <li>
-        <Link to='/login'>Login</Link>
+        <Link to="/login">Login</Link>
       </li>
     </ul>
   );
 
   return (
-    <nav className='navbar'>
+    <nav className="navbar">
       <h3>
-        <Link to='/'>Navigator</Link>
+        <Link to="/">Navigator</Link>
       </h3>
       {!loading && (
         <React.Fragment>{isAuth ? authLink : guestLink}</React.Fragment>

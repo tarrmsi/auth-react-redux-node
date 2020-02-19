@@ -18,3 +18,4 @@ rules:
   no-process-exit: "off"
   node/no-unsupported-features/es-syntax: "off"
   no-undef: "off"
+  import/named: "off"

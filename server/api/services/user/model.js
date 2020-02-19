@@ -6,7 +6,7 @@ import moment from "moment-timezone";
 import { jwtSecret, jwtExpirationInterval } from "../../../config/vars";
 
 const userSchema = new mongoose.Schema({
-  username: {
+  name: {
     type: String
   },
   email: {
@@ -18,7 +18,8 @@ const userSchema = new mongoose.Schema({
     type: String,
     minlength: 6,
     maxlength: 128
-  }
+  },
+  avatar: String
 });
 
 userSchema.pre("save", async function(next) {

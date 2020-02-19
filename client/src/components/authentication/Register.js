@@ -9,13 +9,13 @@ import "./Register.css";
 
 const Register = ({ register, setAlert, isAuth }) => {
   const [formData, setFormData] = useState({
-    username: "",
+    name: "",
     email: "",
     password: "",
     password2: ""
   });
 
-  const { username, email, password, password2 } = formData;
+  const { name, email, password, password2 } = formData;
 
   const onHandleSubmit = e => {
     e.preventDefault();
@@ -23,7 +23,7 @@ const Register = ({ register, setAlert, isAuth }) => {
     if (password !== password2) {
       setAlert("Passwords do not match!", "danger");
     } else {
-      register({ username, email, password });
+      register({ name, email, password });
     }
   };
 
@@ -45,8 +45,8 @@ const Register = ({ register, setAlert, isAuth }) => {
               <label>Username</label>
               <input
                 type="text"
-                name="username"
-                value={username}
+                name="name"
+                value={name}
                 onChange={onHandleChange}
               />
             </div>

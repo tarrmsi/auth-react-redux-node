@@ -1,35 +1,41 @@
-import React, { useEffect } from "react";
+import React, { Fragment, useEffect } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
 import "./Profile.css";
+import Spinner from "./Spinner";
 import { loadUser } from "../../actions/authActions";
 
-const Profile = ({ loadUser, auth: { profile, loading } }) => {
+const Profile = ({ loadUser, auth: { user, loading } }) => {
   useEffect(() => {
     loadUser();
   }, [loadUser]);
 
-  return loading && profile === null ? (
-    <React.Fragment>
-      <h1>Welcome to your profile</h1>
-    </React.Fragment>
-  ) : (
-    <React.Fragment>
-      <div className='wrapper'>
-        <div className='form-wrapper'>
-          <h1 className='dashboard'>Dashboard</h1>
-          <h1>{profile.username}</h1>
-          <p>ID: {profile._id}</p>
-          <p>Email: {profile.email}</p>
-        </div>
-      </div>
-    </React.Fragment>
+  return (
+    <Fragment>
+      {user === null || loading ? (
+        <Spinner />
+      ) : (
+        <Fragment>
+          <div className="profile-wrapper">
+            <div className="profile-container">
+              <div className="profile">
+                <img src={user.avatar} className="round-img" alt="" />
+                <div>
+                  <p>Name: {user.name}</p>
+                  <p>ID: {user._id}</p>
+                  <p>Email: {user.email}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Fragment>
+      )}
+    </Fragment>
   );
 };
 
 Profile.propTypes = {
-  loadUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired
 };
 

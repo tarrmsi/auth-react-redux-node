@@ -9,7 +9,7 @@ import {
 } from "../actions/types";
 
 const initialState = {
-  profile: null,
+  user: null,
   isAuth: null,
   loading: true
 };
@@ -21,7 +21,7 @@ export default function(state = initialState, action) {
     case LOAD_USER:
       return {
         ...state,
-        profile: payload,
+        user: payload,
         isAuth: true,
         loading: false
       };

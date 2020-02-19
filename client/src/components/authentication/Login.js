@@ -24,37 +24,37 @@ const Login = ({ login, isAuth }) => {
   };
 
   if (isAuth) {
-    return <Redirect to='/profile' />;
+    return <Redirect to="/dashboard" />;
   }
 
   return (
     <React.Fragment>
-      <div className='wrapper'>
-        <div className='form-wrapper'>
+      <div className="wrapper">
+        <div className="form-wrapper">
           <form onSubmit={onHandleSubmit}>
             <h1>Login Here</h1>
-            <div className='email'>
+            <div className="email">
               <label>Email</label>
               <input
-                type='email'
-                name='email'
+                type="email"
+                name="email"
                 value={email}
                 onChange={onHandleChange}
               />
             </div>
-            <div className='password'>
+            <div className="password">
               <label>Password</label>
               <input
-                type='password'
-                name='password'
+                type="password"
+                name="password"
                 value={password}
                 onChange={onHandleChange}
               />
             </div>
-            <div className='createAccount'>
+            <div className="createAccount">
               <button>Sign In</button>
               <small>
-                Don't Have an Account? <Link to='/register'>Sign Up</Link>
+                Don't Have an Account? <Link to="/register">Sign Up</Link>
               </small>
             </div>
           </form>

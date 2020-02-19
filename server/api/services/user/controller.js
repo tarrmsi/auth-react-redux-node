@@ -1,3 +1,5 @@
+import gravatar from "gravatar";
+
 import User from "./model";
 
 // @route   GET /api/auth/user
@@ -16,7 +18,7 @@ exports.getUser = async (req, res) => {
 // @desc    Register a user
 // @access  Public
 exports.register = async (req, res) => {
-  const { username, email, password } = req.body;
+  const { name, email, password } = req.body;
   try {
     // check if user with the email provided is already registered
     const foundUser = await User.findOne({ email });
@@ -24,10 +26,14 @@ exports.register = async (req, res) => {
       return res.status(400).json({ error: "Invalid credentials" });
     }
 
+    // get user's gravatar
+    const avatar = gravatar.url(email, { s: "200", r: "pg", d: "mm" });
+
     // create new user
     const newUser = new User({
-      username,
+      name,
       email,
+      avatar,
       password
     });
     await newUser.save();
